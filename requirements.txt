@@ -1,2 +1,10 @@
 pylint
 click
+pandas
+DateTime
+pandas_datareader
+tensorflow == 2.3
+keras
+sklearn
+matplotlib
+numpy
