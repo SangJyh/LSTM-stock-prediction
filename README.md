@@ -1,45 +1,26 @@
-# container-from-scratch-python
-This is building a container from scratch
+# container-for-stock-prediction
+This is a Docker container built from scratch
 
-## Build the Container Yourself and Push to Docker Hub
+## How to use it?
 
-### Build image
-*(If you want to develop yourself)* 
-docker build --tag=hello-duke-cli-210 .
-
-### List docker images
-docker image ls
-
-### Run my newly built container
-
-docker run -it hello-duke-cli-210 python app.py --name "Big John"
-
-### Push to Docker Hub
-
-*Note:  You will need to change for your Docker Hub Repo*
-docker push noahgift/duke102:tagname
-
-## Run it yourself
+### Pull from Docker Repository and Run
 
 ```bash
-docker pull noahgift/cloudapp:latest
-docker run -it noahgift/cloudapp bash 
-
-#then run python app.py --help
-```
-
-## Pass in a command
-
-```bash
-docker run -it noahgift/cloudapp python app.py --name "Big John"
+docker pull even25/stock-lstm
+docker run even25/stock-lstm python app.py --name `STOCK NAME`
 #the output
-Hello Big John!
+`Predicted Price`
+`STOCK NAME` historical stock price (from `Y-M-D` to `Y-M-D`)
+Next: `Bull/Bear/Same`!
 ```
 
-### More things Do
 
-* Lint the code with Github Actions (see the Makefile)
-* Automatically build the container after lint, and push to DockerHub or some other Container Registery
+### Run Remotely
 
-
-
+```bash
+docker run -it even25/stock-lstm python app.py --name `STOCK NAME`
+#the output
+`Predicted Price`
+`STOCK NAME` historical stock price (from `Y-M-D` to `Y-M-D`)
+Next: `Bull/Bear/Same`!
+```
